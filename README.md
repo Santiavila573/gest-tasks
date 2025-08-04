@@ -106,5 +106,5 @@ Puedes usar los siguientes perfiles para probar los diferentes roles y funcional
 
 ## 📄 Licencia
 
-Este proyecto es para fines educativos y de demostración. Siéntete libre de usarlo y modificarlo.
+Este proyecto es para fines educativos como proyecto integrador y de demostración. Siéntete libre de usarlo y modificarlo.
 
