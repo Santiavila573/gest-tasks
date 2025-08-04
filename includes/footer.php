@@ -23,8 +23,8 @@ if (isset($_SESSION['user_id'])):
             <button id="chatbot-send-btn"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
-    <!-- Botón Flotante para abrir el chat -->
-    <button id="open-chatbot-btn">
+    <!-- Botón Flotante para abrir el chat con efecto de levitación -->
+    <button id="open-chatbot-btn" style="animation: float 2s ease-in-out infinite; animation-direction: alternate;">
         <i class="fas fa-robot"></i>
     </button>
 </div>

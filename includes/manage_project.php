@@ -1,9 +1,9 @@
 <?php
 // Archivo: /manage_project.php (Versión Corregida)
 
-include 'includes/header.php';
-require_once 'includes/db_connect.php';
-require_once 'includes/functions.php';
+include_once dirname(__FILE__).'/header.php';
+require_once dirname(__FILE__).'/db_connect.php';
+require_once 'functions.php';
 
 // --- Verificación de Seguridad y Obtención de Datos ---
 if (!isset($_SESSION['user_id']) || $_SESSION['user_rol'] === 'Developer') {
@@ -46,7 +46,7 @@ $non_members = getNonProjectMembers($mysqli, $project_id);
     <div class="view-header">
         <div>
             <!-- Corregimos el enlace para que vuelva a la vista del proyecto, no al dashboard general -->
-            <a href="project_view.php?id=<?php echo $project_id; ?>" class="back-link"><i class="fas fa-arrow-left"></i> Volver al Proyecto</a>
+            <a href="project_view.php?id=<?php echo $project_id; ?>" class="back-link"><i class="fas fa-arrow-left"></i></a>
             <h1>Gestionar Equipo</h1>
             <p>Añade o elimina miembros del proyecto "<?php echo htmlspecialchars($project['nombre']); ?>"</p>
         </div>

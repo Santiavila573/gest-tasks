@@ -18,8 +18,7 @@ $projects = getProjectsForUser($mysqli, $_SESSION['user_id'], $_SESSION['user_ro
 <div class="dashboard-container">
 
 <div class="dashboard-header">
-    <h1>Panel de Proyectos</h1>
-    
+    <h1 class="dashboard-title">GestorTasks IA 📅</h1>
     <!-- Nuevo contenedor para los botones -->
     <div class="header-actions">
         <?php
@@ -33,6 +32,8 @@ $projects = getProjectsForUser($mysqli, $_SESSION['user_id'], $_SESSION['user_ro
         <a href="logout.php" class="btn btn-secondary">Cerrar Sesión</a>
     </div>
 </div>
+
+<h2 class="dashboard-subtitle">Proyectos 📈</h2>
 
     
     <div class="projects-grid">
@@ -90,29 +91,38 @@ $projects = getProjectsForUser($mysqli, $_SESSION['user_id'], $_SESSION['user_ro
 <div id="add-project-modal" class="modal" style="display: none;">
     <div class="modal-content">
         <div class="modal-header">
-            <h2>Nuevo Proyecto</h2>
+            <br>
+            <h2 class="dashboard-subtitle">Nuevo Proyecto</h2>
             <button id="close-project-modal-btn" class="close-btn">&times;</button>
         </div>
         <div class="modal-body">
             <form id="add-project-form" action="core/add_project.php" method="POST">
                 <div class="form-group">
                     <label for="project-name">Nombre del Proyecto</label>
+                    <br>
                     <input type="text" id="project-name" name="nombre" class="form-control" required>
                 </div>
+                <br>
                 <div class="form-group">
                     <label for="project-desc">Descripción</label>
+                    <br>
                     <textarea id="project-desc" name="descripcion" class="form-control" rows="3"></textarea>
                 </div>
+                <br>
                 <div class="form-group-inline">
                     <div class="form-group">
                         <label for="project-start">Fecha de Inicio</label>
+                        <br>
                         <input type="date" id="project-start" name="fecha_inicio" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="project-end">Fecha de Fin (Opcional)</label>
+                        <br>
                         <input type="date" id="project-end" name="fecha_fin" class="form-control">
                     </div>
                 </div>
+                <br>
+                <br>
                 <div class="form-actions">
                     <button type="submit" class="btn">Guardar Proyecto</button>
                 </div>

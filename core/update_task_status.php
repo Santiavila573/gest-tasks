@@ -54,3 +54,4 @@ if (isset($_POST['task_id']) && isset($_POST['new_status'])) {
     echo json_encode(['success' => false, 'error' => 'Datos incompletos']);
 }
 ?>
+

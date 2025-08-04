@@ -50,7 +50,7 @@ if (!$project) {
 
     <!-- Sección de Sprints -->
     <div class="section">
-        <h2>Sprints del Proyecto</h2>
+        <h2 class="dashboard-subtitle">Sprints del Proyecto</h2>
         <div class="sprints-list">
             <?php if (!empty($sprints)): ?>
                 <?php foreach ($sprints as $sprint): ?>
@@ -76,7 +76,7 @@ if (!$project) {
 
     <!-- Sección del Tablero de Tareas -->
     <div class="section">
-        <h2>Tablero de Tareas</h2>
+        <h2 class="">Tablero de Tareas</h2>
         <div class="add-task-container">
             <form id="add-task-form" action="core/add_task.php" method="POST">
                 <h4>Nueva Tarea</h4>

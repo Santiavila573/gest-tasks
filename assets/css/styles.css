@@ -18,9 +18,9 @@
     --muted-text-color: #6c757d;
     --border-color: #e9ecef;
     --success-color: #198754;
-    --warning-color: #ffc107;
+    --warning-color: #117ce6;
     --danger-color: #dc3545;
-    --font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     --border-radius: 8px;
     --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
     --transition-speed: 0.2s;
@@ -38,7 +38,7 @@
 /* Reemplaza la regla 'body' en tu style.css con esta */
 
 body {
-    font-family: var(--font-family-sans-serif);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
     line-height: 1.6;
     background-image: url('../images/fondo.png');
@@ -77,14 +77,26 @@ body {
 }
 
 .auth-container h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
 .auth-container p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--muted-text-color);
     margin-bottom: 2rem;
+}
+
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1330a4;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 2px #f2f1f1;
 }
 
 .input-group {
@@ -162,13 +174,31 @@ select.form-control {
 
 .form-link {
     margin-top: 2rem;
+    text-align: center;
 }
 .form-link a {
     color: var(--primary-color);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 .form-link a:hover {
+    color: var(--primary-hover-color);
+    text-decoration: underline;
+}
+
+.back-link{
+    margin-top: 2rem;
+    text-align: center;
+}
+.back-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.back-link a:hover {
+    color: var(--primary-hover-color);
     text-decoration: underline;
 }
 
@@ -211,6 +241,17 @@ select.form-control {
     padding: 10px 22px;
 }
 
+.dashboard-subtitle{
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--primary-hover-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: fadeIn 0.5s ease-out;
+    border-bottom: 2px solid white;
+}
+
 /* ==========================================================================
    4. Tarjetas de Proyecto
    ========================================================================== */
@@ -232,7 +273,7 @@ select.form-control {
     display: flex;
     flex-direction: column;
     height: 100%;
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .project-card:hover {
@@ -242,7 +283,9 @@ select.form-control {
 
 .project-card-header {
     padding: 1rem 1.25rem;
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .project-status {
@@ -252,6 +295,7 @@ select.form-control {
     font-weight: 600;
     text-transform: uppercase;
     color: #fff;
+    margin-left: 0.5rem;
 }
 
 .status-activo { background-color: var(--primary-color); }
@@ -261,6 +305,9 @@ select.form-control {
 .project-card-body {
     padding: 0 1.25rem 1.25rem;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .project-card-body h3 {
@@ -302,6 +349,10 @@ select.form-control {
     background-color: var(--background-color);
     border: 1px dashed var(--border-color);
     border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 /* ==========================================================================
@@ -314,21 +365,23 @@ select.form-control {
     font-size: 1.75rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
+    color: var(--text-color);
 }
 
 .sprints-list .sprint-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.25rem;
+    padding: 1rem 1.25rem;
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     margin-bottom: 1rem;
-    background-color: #fcfcfc;
+    background-color: var(--container-bg-color);
     transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 .sprints-list .sprint-item:hover {
     border-color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .sprint-status {
@@ -337,9 +390,10 @@ select.form-control {
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
-    color: #fff;
+    color: rgb(245, 245, 245);
+    background-color: var(--warning-color);
 }
-.status-pendiente { background-color: var(--warning-color); color: var(--text-color); }
+.status-pendiente { background-color: var(--warning-color); }
 .status-en-curso { background-color: var(--primary-color); }
 
 .section-header {
@@ -355,6 +409,7 @@ select.form-control {
 .section-subtitle {
     font-size: 1.25rem;
     font-weight: 600;
+    color: var(--muted-text-color);
 }
 
 .section-header .btn {
@@ -364,7 +419,7 @@ select.form-control {
 
 .kanban-board {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(280px, 1fr));
     gap: 1.5rem;
     overflow-x: auto;
     padding: 0.5rem 0 1rem 0;
@@ -431,20 +486,19 @@ select.form-control {
     z-index: 1050;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow: auto;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(74, 105, 255, 0.5);
 }
 
 .modal-content {
     background-color: #fff;
-    margin: 10% auto;
+    margin: 10vh auto;
     padding: 0;
     border-radius: var(--border-radius);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    width: 90%;
-    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(74, 105, 255, 0.3);
+    width: min(90vw, 600px);
     animation: slide-down 0.4s ease-out;
 }
 
@@ -457,6 +511,7 @@ select.form-control {
 }
 .modal-header h2 {
     font-size: 1.5rem;
+    font-weight: 600;
 }
 .close-btn {
     background: none;
@@ -468,19 +523,22 @@ select.form-control {
     transition: color var(--transition-speed) ease;
 }
 .close-btn:hover {
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 
 .modal-body {
     padding: 2rem;
+    overflow-y: auto;
 }
 
 .form-group-inline {
     display: flex;
     gap: 1.5rem;
+    align-items: center;
 }
 .form-group-inline .form-group {
     width: 100%;
+    flex: 1;
 }
 
 /* ==========================================================================
@@ -610,10 +668,11 @@ select.form-control {
     font-size: 1.5rem;
     margin-left: 0.5rem;
     cursor: pointer;
-    transition: color var(--transition-speed) ease;
+    transition: color var(--transition-speed) ease, transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 #chatbot-send-btn:hover {
     color: var(--primary-hover-color);
+    transform: translateY(-8px);
 }
 
 .chat-message table {
@@ -635,18 +694,18 @@ select.form-control {
    8. Animaciones y Media Queries
    ========================================================================== */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: scale(0.95) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 @keyframes slideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: scale(0.95) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 @keyframes slide-down {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from { transform: scale(0.95) translateY(-50px); opacity: 0; }
+    to { transform: scale(1) translateY(0); opacity: 1; }
 }
 
 @media (max-width: 768px) {
@@ -689,6 +748,13 @@ select.form-control {
     background-color: #f8f9ff;
 }
 
-
+    @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0); }
+    }
+    #open-chatbot-btn {
+        animation: float 2s ease-in-out infinite;
+    }
 
 

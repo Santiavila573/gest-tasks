@@ -64,7 +64,6 @@ function updateTaskStatus(taskId, newStatus) {
     });
 }
 
-// En /assets/js/main.js, dentro del evento DOMContentLoaded
 
 document.addEventListener('DOMContentLoaded', function() {
     // ... (código de SortableJS que ya tienes) ...
@@ -90,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// En /assets/js/main.js, dentro del evento DOMContentLoaded
 
 document.addEventListener('DOMContentLoaded', function() {
     // ... (código anterior) ...
@@ -159,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// En /assets/js/main.js, dentro del evento DOMContentLoaded
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
