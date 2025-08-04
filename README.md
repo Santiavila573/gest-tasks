@@ -1,6 +1,7 @@
 # PIG CARRERA DE DESARROLLO DE SOFTWARE - GESTOR DE TAREAS SCRUM CON IA
 
-![Panel de Proyectos](https://i.imgur.com/link_a_tu_screenshot_del_dashboard.png )
+<img width="820" height="668" alt="2025-08-03 15 59 54" src="https://github.com/user-attachments/assets/4ccc0bc0-b13b-4783-b61c-564e99990326" />
+
 
 Un gestor de proyectos web completo y dinámico, diseñado bajo la metodología Scrum. La aplicación permite a los equipos gestionar proyectos, sprints y tareas a través de una interfaz intuitiva y un tablero Kanban interactivo. Su característica principal es un chatbot con IA que actúa como un asistente proactivo, facilitando el acceso a la información.
 
