@@ -1,0 +1,694 @@
+/*
+ * Archivo: /assets/css/style.css
+ * Versión: 3.1 (Completa, Profesional & Animada)
+ * Descripción: Un rediseño completo que cubre todos los componentes de la aplicación,
+ *              enfocado en la experiencia de usuario, la consistencia visual y las micro-interacciones.
+ */
+
+/* ==========================================================================
+   1. Variables Globales y Reseteo
+   ========================================================================== */
+:root {
+    --primary-color: #4a69ff; /* Un azul más vibrante y moderno */
+    --primary-hover-color: #3b54cc;
+    --secondary-color: #6c757d;
+    --background-color: #f4f7f9; /* Un gris muy claro y suave */
+    --container-bg-color: #ffffff;
+    --text-color: #343a40;
+    --muted-text-color: #6c757d;
+    --border-color: #e9ecef;
+    --success-color: #198754;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    --transition-speed: 0.2s;
+}
+
+/* Importamos la fuente 'Inter' de Google Fonts para un look moderno */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap' );
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Reemplaza la regla 'body' en tu style.css con esta */
+
+body {
+    font-family: var(--font-family-sans-serif);
+    font-size: 16px;
+    line-height: 1.6;
+    background-image: url('../images/fondo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* --- INICIO DE LA CORRECCIÓN --- */
+    /* Usamos Flexbox para centrar el contenido */
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center;     /* Centra horizontalmente */
+    min-height: 100vh;       /* Asegura que el body ocupe toda la altura de la pantalla */
+    padding: 1rem;           /* Añade un pequeño margen en los bordes para móviles */
+    /* --- FIN DE LA CORRECCIÓN --- */
+}
+
+
+/* ==========================================================================
+   2. Componentes de Autenticación (Login/Registro)
+   ========================================================================== */
+.auth-container {
+    background-color: var(--container-bg-color);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 450px;
+    margin: 2rem;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.auth-container h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.auth-container p {
+    color: var(--muted-text-color);
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group .form-control {
+    padding-left: 45px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #adb5bd;
+    transition: color var(--transition-speed) ease;
+}
+
+.input-group .form-control:focus + i {
+    color: var(--primary-color);
+}
+
+.form-control {
+    width: 100%;
+    padding: 14px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 105, 255, 0.2);
+}
+
+select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%236c757d%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22/%3E%3C/svg%3E' );
+    background-repeat: no-repeat;
+    background-position: right 1.25rem top 50%;
+    background-size: 0.65em auto;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #e9ecef;
+    color: var(--text-color);
+}
+.btn-secondary:hover {
+    background-color: #dce1e6;
+}
+
+.form-link {
+    margin-top: 2rem;
+}
+.form-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+.form-link a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   3. Layout Principal (Dashboard, Vista de Proyecto)
+   ========================================================================== */
+.dashboard-container, .view-container, .manage-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 40px;
+    background-color: var(--container-bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.dashboard-header, .view-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dashboard-header h1, .view-header h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.header-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+.header-actions .btn {
+    width: auto;
+    padding: 10px 22px;
+}
+
+/* ==========================================================================
+   4. Tarjetas de Proyecto
+   ========================================================================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.75rem;
+}
+
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-card {
+    background-color: var(--container-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.project-card-header {
+    padding: 1rem 1.25rem;
+    text-align: right;
+}
+
+.project-status {
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.status-activo { background-color: var(--primary-color); }
+.status-en-pausa { background-color: var(--secondary-color); }
+.status-finalizado { background-color: var(--success-color); }
+
+.project-card-body {
+    padding: 0 1.25rem 1.25rem;
+    flex-grow: 1;
+}
+
+.project-card-body h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-card-body p {
+    color: var(--muted-text-color);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.project-card-footer {
+    padding: 1rem 1.25rem;
+    background-color: #fcfcfc;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.8rem;
+    color: var(--muted-text-color);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.project-card-footer.status-on-time {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+.project-card-footer.status-delayed {
+    background-color: #ffebee;
+    color: #c62828;
+    font-weight: 600;
+}
+
+.no-projects-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem;
+    background-color: var(--background-color);
+    border: 1px dashed var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+/* ==========================================================================
+   5. Vista de Proyecto (Sprints y Tablero)
+   ========================================================================== */
+.section {
+    margin-bottom: 3rem;
+}
+.section > h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.sprints-list .sprint-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    background-color: #fcfcfc;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+.sprints-list .sprint-item:hover {
+    border-color: var(--primary-color);
+}
+
+.sprint-status {
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+.status-pendiente { background-color: var(--warning-color); color: var(--text-color); }
+.status-en-curso { background-color: var(--primary-color); }
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.section-header .btn {
+    width: auto;
+    padding: 10px 22px;
+}
+
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 0.5rem 0 1rem 0;
+}
+
+.kanban-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 280px;
+}
+
+.column-header {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+}
+
+.column-header h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--muted-text-color);
+}
+.column-header i {
+    margin-right: 0.75rem;
+}
+
+.column-tasks {
+    flex-grow: 1;
+    min-height: 150px;
+}
+
+.task-card {
+    background-color: var(--container-bg-color);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid;
+    cursor: grab;
+    transition: box-shadow var(--transition-speed) ease;
+}
+.task-card:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.task-card.priority-alta { border-left-color: var(--danger-color); }
+.task-card.priority-media { border-left-color: var(--warning-color); }
+.task-card.priority-baja { border-left-color: var(--success-color); }
+
+.task-ghost {
+    opacity: 0.5;
+    background: #e0e7ff;
+    border: 2px dashed var(--primary-color);
+}
+
+/* ==========================================================================
+   6. Modales (Crear Proyecto, etc.)
+   ========================================================================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 0;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 600px;
+    animation: slide-down 0.4s ease-out;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.modal-header h2 {
+    font-size: 1.5rem;
+}
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--muted-text-color);
+    cursor: pointer;
+    transition: color var(--transition-speed) ease;
+}
+.close-btn:hover {
+    color: var(--text-color);
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.form-group-inline {
+    display: flex;
+    gap: 1.5rem;
+}
+.form-group-inline .form-group {
+    width: 100%;
+}
+
+/* ==========================================================================
+   7. Chatbot
+   ========================================================================== */
+#chatbot-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+#open-chatbot-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.75rem;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(74, 105, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+#open-chatbot-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(74, 105, 255, 0.5);
+}
+
+#chatbot-window {
+    width: 380px;
+    height: 550px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideUp 0.4s ease-out;
+}
+
+#chatbot-header {
+    background: linear-gradient(45deg, var(--primary-color), #6a82ff);
+    color: white;
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#chatbot-header h5 {
+    font-weight: 600;
+}
+#close-chatbot-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity var(--transition-speed) ease;
+}
+#close-chatbot-btn:hover {
+    opacity: 1;
+}
+
+#chatbot-messages {
+    flex-grow: 1;
+    padding: 1.25rem;
+    overflow-y: auto;
+    background-color: var(--background-color);
+}
+
+.chat-message {
+    display: flex;
+    margin-bottom: 1rem;
+    max-width: 85%;
+}
+.chat-message p {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    border-radius: 18px;
+    line-height: 1.5;
+}
+
+.chat-message.bot {
+    align-self: flex-start;
+}
+.chat-message.bot p {
+    background-color: #e9ecef;
+    border-bottom-left-radius: 4px;
+}
+
+.chat-message.user {
+    margin-left: auto;
+}
+.chat-message.user p {
+    background-color: var(--primary-color);
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+#chatbot-input-container {
+    display: flex;
+    padding: 0.75rem;
+    border-top: 1px solid var(--border-color);
+    background-color: #fff;
+}
+#chatbot-input {
+    flex-grow: 1;
+    border: 1px solid transparent;
+    background-color: var(--background-color);
+    border-radius: 20px;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+}
+#chatbot-input:focus {
+    background-color: #fff;
+    border-color: var(--primary-color);
+}
+#chatbot-send-btn {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: color var(--transition-speed) ease;
+}
+#chatbot-send-btn:hover {
+    color: var(--primary-hover-color);
+}
+
+.chat-message table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 12px;
+}
+.chat-message th, .chat-message td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    text-align: left;
+}
+.chat-message th {
+    background-color: #f2f2f2;
+}
+
+/* ==========================================================================
+   8. Animaciones y Media Queries
+   ========================================================================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-down {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container, .view-container, .manage-container {
+        padding: 20px;
+    }
+    .kanban-board {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    body { padding: 1rem; }
+    .auth-container { padding: 25px; margin: 1rem; }
+    #chatbot-window {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0;
+        margin: 0;
+    }
+    #chatbot-container {
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
+
+.sprint-item {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.sprint-item.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 105, 255, 0.2);
+    background-color: #f8f9ff;
+}
+
+
+
+
