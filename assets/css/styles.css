@@ -477,6 +477,17 @@ select.form-control {
     border: 2px dashed var(--primary-color);
 }
 
+.task-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+.task-card p {
+    font-size: 0.875rem;
+    color: var(--muted-text-color);
+}
+
 /* ==========================================================================
    6. Modales (Crear Proyecto, etc.)
    ========================================================================== */

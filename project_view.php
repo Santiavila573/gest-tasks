@@ -76,10 +76,9 @@ if (!$project) {
 
     <!-- Sección del Tablero de Tareas -->
     <div class="section">
-        <h2 class="">Tablero de Tareas</h2>
+        <h2 class="tablero_tareas">Tablero de Tareas</h2>
         <div class="add-task-container">
             <form id="add-task-form" action="core/add_task.php" method="POST">
-                <h4>Nueva Tarea</h4>
                 <input type="hidden" name="project_id" value="<?php echo $project_id; ?>">
                 <div class="form-group">
                     <label for="task-title">Título de la Tarea</label>
