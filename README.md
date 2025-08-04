@@ -1,4 +1,4 @@
-# GESTOR DE TAREAS SCRUM CON IA
+# GESTORTASKS IA
 
 <img width="1584" height="769" alt="image" src="https://github.com/user-attachments/assets/00fc3ac9-3b15-487e-9f0c-308a77702174" />
 <img width="1579" height="759" alt="image" src="https://github.com/user-attachments/assets/9290fd1f-8aa3-4745-9486-1aa507c50cb5" />
