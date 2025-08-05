@@ -12,7 +12,12 @@ if (session_status() == PHP_SESSION_NONE) {
 <head>
    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestor de Tareas Scrum</title>
+    <title>GestorTasksIA</title>
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+   
+    <!-- Enlazamos nuestra hoja de estilos -->
+
+    <link rel="stylesheet" href="assets/css/styles.css">
     
     <!-- Añadir Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
