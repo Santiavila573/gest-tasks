@@ -88,3 +88,4 @@ if (empty($titulo) || $project_id === 0) {
 $mysqli->close();
 echo json_encode($response);
 ?>
+

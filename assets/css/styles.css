@@ -150,7 +150,7 @@ select.form-control {
     width: 100%;
     padding: 14px;
     background-color: var(--primary-color);
-    border: none;
+    border: 1px solid transparent;
     border-radius: var(--border-radius);
     color: white;
     font-size: 1rem;
@@ -162,11 +162,13 @@ select.form-control {
 .btn:hover {
     background-color: var(--primary-hover-color);
     transform: translateY(-2px);
+    border-color: transparent;
 }
 
 .btn-secondary {
     background-color: #e9ecef;
     color: var(--text-color);
+    text-decoration: none;
 }
 .btn-secondary:hover {
     background-color: #dce1e6;
@@ -239,6 +241,15 @@ select.form-control {
 .header-actions .btn {
     width: auto;
     padding: 10px 22px;
+}
+
+.dashboard-logo{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: -3rem;
+    animation: fadeIn 0.5s ease-out;
 }
 
 .dashboard-subtitle{
@@ -314,6 +325,7 @@ select.form-control {
 .project-card-body h3 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
+    color: #4c4f51;
 }
 
 .project-card-body p {
@@ -585,15 +597,16 @@ select.form-control {
 }
 
 #chatbot-window {
-    width: 380px;
-    height: 550px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    width: 400px;
+    height: 600px;
+    background-color: #f4f7f9;
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
     display: none; /* Oculto por defecto */
     flex-direction: column;
     overflow: hidden;
     animation: slideUp 0.4s ease-out;
+    border: 1px solid var(--border-color);
 }
 
 #chatbot-header {

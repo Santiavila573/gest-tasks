@@ -14,7 +14,7 @@ if (isset($_SESSION['user_id'])):
         <div id="chatbot-messages">
             <!-- Mensaje de bienvenida -->
             <div class="chat-message bot">
-                <p>¡Hola! Soy tu asistente virtual ScrumBot 🤖. ¿En qué puedo ayudarte? Prueba a escribir "proyectos" o "tareas del proyecto 1".</p>
+                <p>¡Hola! Soy tu asistente virtual ScrumBot 🦾. ¿En qué puedo ayudarte? Prueba a escribir "proyectos" o "tareas del proyecto 1".</p>
             </div>
         </div>
         <div id="chatbot-input-container">

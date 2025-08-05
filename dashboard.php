@@ -18,7 +18,11 @@ $projects = getProjectsForUser($mysqli, $_SESSION['user_id'], $_SESSION['user_ro
 <div class="dashboard-container">
 
 <div class="dashboard-header">
-    <h1 class="dashboard-title">GestorTasks IA 📅</h1>
+    <h1 class="dashboard-title">
+        <img src="assets/images/logotipo.png" alt="GestorTasks Logo" class="dashboard-logo">
+        <br>
+        Panel de Proyectos
+    </h1>
     <!-- Nuevo contenedor para los botones -->
     <div class="header-actions">
         <?php
@@ -33,7 +37,7 @@ $projects = getProjectsForUser($mysqli, $_SESSION['user_id'], $_SESSION['user_ro
     </div>
 </div>
 
-<h2 class="dashboard-subtitle">Proyectos 📈</h2>
+
 
     
     <div class="projects-grid">
@@ -92,7 +96,7 @@ $projects = getProjectsForUser($mysqli, $_SESSION['user_id'], $_SESSION['user_ro
     <div class="modal-content">
         <div class="modal-header">
             <br>
-            <h2 class="dashboard-subtitle">Nuevo Proyecto 🔄</h2>
+            <h2 class="dashboard-subtitle">Nuevo Proyecto 📋</h2>
             <button id="close-project-modal-btn" class="close-btn">&times;</button>
         </div>
         <div class="modal-body">

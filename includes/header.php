@@ -13,7 +13,7 @@ if (session_status() == PHP_SESSION_NONE) {
    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GestorTasksIA</title>
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/logotipo-gestor.ico" type="image/x-icon">
    
     <!-- Enlazamos nuestra hoja de estilos -->
 

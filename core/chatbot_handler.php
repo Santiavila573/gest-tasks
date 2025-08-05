@@ -3,6 +3,7 @@
 header('Content-Type: application/json');
 require_once '../includes/db_connect.php';
 require_once '../includes/functions.php';
+//require_once '../includes/PHPExcel.php'; 
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
