@@ -12,7 +12,7 @@ if (isset($_SESSION['user_id'])) {
 <!-- 1. Cambiamos la clase del contenedor principal -->
 <div class="auth-container">
     <h2>Crear una Cuenta</h2>
-    <p>Únete al equipo de Gestor de Tareas Scrum</p>
+    <p>Únete al equipo de GestorTasksIA</p>
 
     <?php
     // 2. Usamos las nuevas clases de alerta para los mensajes

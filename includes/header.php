@@ -1,6 +1,11 @@
 <?php
 // Archivo: /includes/header.php
-session_start(); // Iniciamos la sesión en todas las páginas
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start(); // Iniciamos la sesión en todas las páginas
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -26,7 +31,7 @@ session_start(); // Iniciamos la sesión en todas las páginas
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Enlazamos nuestra hoja de estilos -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 
     <!-- Añadir SortableJS -->
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>

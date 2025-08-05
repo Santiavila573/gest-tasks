@@ -155,17 +155,22 @@ function getTasksByProjectId($mysqli, $project_id) {
  *
  * @param object $mysqli Conexión a la base de datos.
  * @param int $project_id ID del proyecto.
- * @return array Lista de miembros del proyecto.
+ * @return array Lista de miembros del proyecto (id, nombre, rol).
  */
 function getProjectMembers($mysqli, $project_id) {
     $members = [];
-    $sql = "SELECT u.id, u.nombre, u.rol FROM usuarios u
+    // La consulta une 'usuarios' con 'proyecto_usuarios' para obtener los detalles
+    // de los usuarios que están vinculados al ID del proyecto.
+    $sql = "SELECT u.id, u.nombre, u.rol 
+            FROM usuarios u
             JOIN proyecto_usuarios pu ON u.id = pu.usuario_id
             WHERE pu.proyecto_id = ?";
+    
     $stmt = $mysqli->prepare($sql);
     $stmt->bind_param("i", $project_id);
     $stmt->execute();
     $result = $stmt->get_result();
+    
     if ($result) {
         while ($row = $result->fetch_assoc()) {
             $members[] = $row;

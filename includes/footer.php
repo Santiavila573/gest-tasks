@@ -1,4 +1,3 @@
-<!-- En /includes/footer.php -->
 
 <?php
 // Solo mostramos el chatbot si el usuario ha iniciado sesión
@@ -9,13 +8,13 @@ if (isset($_SESSION['user_id'])):
     <!-- Ventana del Chat (inicialmente oculta) -->
     <div id="chatbot-window" style="display: none;">
         <div id="chatbot-header">
-            <h5>Asistente Scrum</h5>
+            <h5>SCRUMBOT IA</h5>
             <button id="close-chatbot-btn">&times;</button>
         </div>
         <div id="chatbot-messages">
             <!-- Mensaje de bienvenida -->
             <div class="chat-message bot">
-                <p>¡Hola! Soy tu asistente. ¿En qué puedo ayudarte? Prueba a escribir "proyectos" o "tareas del proyecto 1".</p>
+                <p>¡Hola! Soy tu asistente virtual ScrumBot 🤖. ¿En qué puedo ayudarte? Prueba a escribir "proyectos" o "tareas del proyecto 1".</p>
             </div>
         </div>
         <div id="chatbot-input-container">
@@ -34,3 +33,4 @@ if (isset($_SESSION['user_id'])):
 <script src="assets/js/main.js"></script>
 </body>
 </html>
+

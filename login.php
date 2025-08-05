@@ -9,7 +9,7 @@ if (isset($_SESSION['user_id'])) {
 
 <div class="auth-container">
     <h2>Iniciar Sesión</h2>
-    <p>Bienvenido al Gestor de Tareas Scrum</p>
+    <p>Bienvenido a GestorTasksIA</p>
 
     <?php
     if (isset($_GET['error'])) {
@@ -22,13 +22,13 @@ if (isset($_SESSION['user_id'])) {
 
     <form action="core/login_process.php" method="POST">
         <div class="form-group">
-            <label for="correo">Correo Electrónico</label>
-            <input type="email" id="correo" name="correo" class="form-control" required>
+            <input type="email" id="correo" name="correo" class="form-control" placeholder="Correo Electrónico" required>
         </div>
+        <br>
         <div class="form-group">
-            <label for="contrasena">Contraseña</label>
-            <input type="password" id="contrasena" name="contrasena" class="form-control" required>
+            <input type="password" id="contrasena" name="contrasena" class="form-control" placeholder="Contraseña" required>
         </div>
+        <br>
         <button type="submit" class="btn">Entrar</button>
     </form>
     <p class="form-link">¿No tienes una cuenta? <a href="register.php">Regístrate aquí</a></p>

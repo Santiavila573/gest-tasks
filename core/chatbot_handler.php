@@ -137,7 +137,7 @@ function handleCountTasks($mysqli) {
             $statusCounts[$row['estado']] = $row['count'];
             $total += $row['count'];
         }
-        $reply = 'Actualmente hay un total de **' . $total . ' tareas**, distribuidas así:<ul>';
+        $reply = 'Actualmente hay un total de ' . $total . ' tareas, distribuidas así:<ul>';
         if (isset($statusCounts['Por hacer'])) $reply .= '<li><i class="fas fa-list-ul"></i> **Por hacer:** ' . $statusCounts['Por hacer'] . '</li>';
         if (isset($statusCounts['En progreso'])) $reply .= '<li><i class="fas fa-tasks"></i> **En progreso:** ' . $statusCounts['En progreso'] . '</li>';
         if (isset($statusCounts['Bloqueada'])) $reply .= '<li><i class="fas fa-ban"></i> **Bloqueada:** ' . $statusCounts['Bloqueada'] . '</li>';

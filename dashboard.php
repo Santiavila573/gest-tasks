@@ -92,7 +92,7 @@ $projects = getProjectsForUser($mysqli, $_SESSION['user_id'], $_SESSION['user_ro
     <div class="modal-content">
         <div class="modal-header">
             <br>
-            <h2 class="dashboard-subtitle">Nuevo Proyecto</h2>
+            <h2 class="dashboard-subtitle">Nuevo Proyecto 🔄</h2>
             <button id="close-project-modal-btn" class="close-btn">&times;</button>
         </div>
         <div class="modal-body">
