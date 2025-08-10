@@ -190,3 +190,4 @@ if ($intent) {
 echo json_encode(['reply' => $reply]);
 $mysqli->close();
 ?>
+
