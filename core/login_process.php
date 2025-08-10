@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $correo = $_POST['correo'];
     $contrasena = $_POST['contrasena'];
 
-    // Preparamos la consulta para evitar inyecciones SQL
+    // Preparamos la consulta para evitar inyecciones SQL (PRÁCTICA DE SEGURIDAD - MUY IMPORTANTE)
     $stmt = $mysqli->prepare("SELECT id, nombre, contrasena, rol FROM usuarios WHERE correo = ? AND estado = 1");
     $stmt->bind_param("s", $correo);
     $stmt->execute();

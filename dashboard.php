@@ -37,8 +37,6 @@ $projects = getProjectsForUser($mysqli, $_SESSION['user_id'], $_SESSION['user_ro
     </div>
 </div>
 
-
-
     
     <div class="projects-grid">
         <?php if (!empty($projects)): ?>
