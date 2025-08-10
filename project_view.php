@@ -130,50 +130,71 @@ if (!$project) {
             <h2 class="tablero_tareas" style="font-size: 1.5rem; font-weight: bold; line-height: 1.2; margin-bottom: 1.5rem; color: #333; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">Tablero de Tareas</h2>
             <div class="add-task-container">
                 <form id="add-task-form">
-        <h4>Nueva Tarea</h4>
-        <br>
-        <input type="hidden" name="project_id" value="<?php echo $project_id; ?>">
-        
-        <div class="form-group">
-            <label for="task-title">Título de la Tarea</label>
-            <input type="text" id="task-title" name="titulo" class="form-control" required>
-        </div>
+                    <h4>Nueva Tarea</h4>
+                    <br>
+                    <input type="hidden" name="project_id" value="<?php echo $project_id; ?>">
 
-        <div class="form-group-inline">
-            <div class="form-group">
-                <label for="task-priority">Prioridad</label>
-                <select id="task-priority" name="prioridad" class="form-control" required>
-                    <option value="Baja">Baja</option>
-                    <option value="Media" selected>Media</option>
-                    <option value="Alta">Alta</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="task-assignee">Asignar a:</label>
-                <select id="task-assignee" name="asignado_id" class="form-control">
-                    <option value="">-- Sin asignar --</option>
-                    <?php 
-                        // Este código no cambia, sigue siendo correcto
-                        if (!empty($project_members)) {
-                            foreach ($project_members as $member) {
-                                echo '<option value="' . $member['id'] . '">' . htmlspecialchars($member['nombre']) . ' (' . htmlspecialchars($member['rol']) . ')</option>';
-                            }
-                        }
-                    ?>
-                </select>
+                    <div class="form-group">
+                        <label for="task-title">Título de la Tarea</label>
+                        <input type="text" id="task-title" name="titulo" class="form-control" required>
+                    </div>
+
+                    <div class="form-group-inline">
+                        <div class="form-group">
+                            <label for="task-priority">Prioridad</label>
+                            <select id="task-priority" name="prioridad" class="form-control" required>
+                                <option value="Baja">Baja</option>
+                                <option value="Media" selected>Media</option>
+                                <option value="Alta">Alta</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-assignee">Asignar a:</label>
+                            <select id="task-assignee" name="asignado_id" class="form-control">
+                                <option value="">-- Sin asignar --</option>
+                                <?php 
+                                    if (!empty($project_members)) {
+                                        foreach ($project_members as $member) {
+                                            echo '<option value="' . $member['id'] . '">' . htmlspecialchars($member['nombre']) . ' (' . htmlspecialchars($member['rol']) . ')</option>';
+                                        }
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-actions">
+                        <button type="button" id="save-task-btn" class="btn">Guardar Tarea</button>
+                        <br>
+                        <br>
+                        <button type="button" id="cancel-task-btn" class="btn btn-secondary">Cancelar</button>
+                    </div>
+                </form>
             </div>
         </div>
-<br>
-        <div class="form-actions">
-            <!-- Cambiamos type="submit" a type="button" y le damos un ID -->
-            <button type="button" id="save-task-btn" class="btn">Guardar Tarea</button>
-            <br>
-            <br>
-            <button type="button" id="cancel-task-btn" class="btn btn-secondary">Cancelar</button>
-        </div>
-    </form>
-</div>
-            </div>
+        <script>
+            document.getElementById('save-task-btn').addEventListener('click', function() {
+                const form = document.getElementById('add-task-form');
+                const formData = new FormData(form);
+
+                fetch('core/add_task.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message);
+                        // Aquí podrías añadir lógica para actualizar la UI con la nueva tarea
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        </script>
               </div>
 
     <!-- ====================================================== -->
