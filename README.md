@@ -97,12 +97,12 @@ Puedes usar los siguientes perfiles para probar los diferentes roles y funcional
 
 *   **Rol: Scrum Master**
     *   **Correo:** `scrum@example.com`
-    *   **Contraseña:** `password123`
+    *   **Contraseña:** `$2y$10$1jFsExL9CH4eG/8JJ46ooO/opJgSYN5BqxaCf91e8CwL9rsVZ.m6W`
     *   *Permisos: Puede ver todos los proyectos, crear nuevos proyectos y gestionar miembros del equipo.*
 
 *   **Rol: Developer**
     *   **Correo:** `dev@example.com`
-    *   **Contraseña:** `password123`
+    *   **Contraseña:** `$2y$10$NzfzT1tmGuRSJ0Z8IeRym.E33LnfMthR3QairrfR7tQgVf26RSxg6`
     *   *Permisos: Solo puede ver los proyectos a los que ha sido asignado. Puede añadir tareas y moverlas en el tablero.*
 
 ---
